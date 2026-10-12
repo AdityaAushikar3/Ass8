@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Records Management System (REST API)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header class="page-header">
+      <h1>Student Records Management System</h1>
+      <p class="subtitle">Full-Stack CRUD Application &bull; Node.js, Express.js & MongoDB</p>
+    </header>
+
+    <!-- Top Summary Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Total Students</span>
+        <span class="stat-val" id="statTotal">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Average Marks</span>
+        <span class="stat-val" id="statAverage">0%</span>
+      </div>
+      <div class="stat-card stat-topper">
+        <span class="stat-label">Top Scorer</span>
+        <span class="stat-val" id="statTopper">None</span>
+      </div>
+    </div>
+
+    <!-- Main Grid: Form and Table -->
+    <div class="main-layout">
+      <!-- Student Form Card -->
+      <div class="card form-card">
+        <h2 id="formTitle">Add New Student</h2>
+        <form id="studentForm">
+          <input type="hidden" id="editStudentId" value="">
+
+          <div class="form-group">
+            <label for="rollNo">Roll Number:</label>
+            <input type="text" id="rollNo" placeholder="e.g. 101" required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Student Name:</label>
+            <input type="text" id="name" placeholder="e.g. Aditya Aushikar" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" placeholder="e.g. aditya@university.edu" required>
+          </div>
+
+          <div class="form-group">
+            <label for="department">Department:</label>
+            <select id="department" required>
+              <option value="">-- Select Department --</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Information Technology">Information Technology</option>
+              <option value="Electronics & Telecom">Electronics & Telecom</option>
+              <option value="Mechanical Engineering">Mechanical Engineering</option>
+              <option value="Civil Engineering">Civil Engineering</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="marks">Marks Obtained (out of 100):</label>
+            <input type="number" id="marks" min="0" max="100" placeholder="0 - 100" required>
+          </div>
+
+          <div class="btn-group">
+            <button type="submit" id="saveBtn" class="btn btn-primary">Save Student</button>
+            <button type="button" id="cancelEditBtn" class="btn btn-secondary" style="display: none;">Cancel</button>
+            <button type="reset" id="resetBtn" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Students Table Card -->
+      <div class="card table-card">
+        <div class="table-header">
+          <h2>Student Records (MongoDB)</h2>
+          <div class="table-actions">
+            <input type="text" id="searchInput" placeholder="Search by name or roll..." class="search-box">
+            <button id="refreshBtn" class="btn btn-outline" title="Reload from MongoDB">↻ Refresh</button>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+          <table id="studentsTable">
+            <thead>
+              <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Marks</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="studentTableBody">
+              <!-- Rendered dynamically from MongoDB -->
+            </tbody>
+          </table>
+        </div>
+
+        <p id="tableMessage" class="table-message" style="display: none;">No student records found.</p>
+      </div>
+    </div>
+
+    <!-- API & Postman Banner -->
+    <footer class="api-banner">
+      <strong>REST API Status:</strong> Active at <code>http://localhost:5000/api/students</code> &bull; Ready for Postman testing with <code>postman_collection.json</code>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
