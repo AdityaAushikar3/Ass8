@@ -1,0 +1,17 @@
+$kind: http-request
+description: Creates a new student record in MongoDB.
+url: http://localhost:5000/api/students
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "rollNo": "101",
+      "name": "Aditya Aushikar",
+      "email": "aditya@university.edu",
+      "department": "Computer Science",
+      "marks": 92
+    }
+order: 1000

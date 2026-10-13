@@ -1,0 +1,15 @@
+# Use this workspace to collaborate
+workspace:
+  id: a63c659e-c01d-4036-bd38-d8ce44bb812d
+
+localResources:
+  collections:
+    - ../Student Records REST API (CRUD)
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/Student Records REST API (CRUD) Copy: dafceb05-5527-4dbd-912b-f3dd7ec514fe
+    ../Student Records REST API (CRUD): student-crud-api-collection
+    ../postman/collections/Student Records REST API (CRUD) Copy 2: 479d078c-857d-496f-ab02-f09ec2f1b6af

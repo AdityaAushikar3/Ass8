@@ -1,0 +1,5 @@
+$kind: http-request
+description: Fetches a single student using their roll number or MongoDB _id.
+url: http://localhost:5000/api/students/101
+method: GET
+order: 3000

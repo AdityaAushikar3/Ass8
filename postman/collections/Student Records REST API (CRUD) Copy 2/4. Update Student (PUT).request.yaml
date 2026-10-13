@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://localhost:5000/api/students/101
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "marks": 96,
+      "department": "Information Technology"
+    }
+order: 4000

@@ -1,0 +1,5 @@
+$kind: http-request
+description: Deletes student record by roll number or MongoDB _id.
+url: http://localhost:5000/api/students/101
+method: DELETE
+order: 5000

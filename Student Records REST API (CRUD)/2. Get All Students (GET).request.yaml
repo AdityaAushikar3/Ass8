@@ -1,0 +1,5 @@
+$kind: http-request
+description: Fetches all student records.
+url: http://localhost:5000/api/students
+method: GET
+order: 2000

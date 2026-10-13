@@ -1,0 +1,32 @@
+### 1. Health / Info Check
+GET http://localhost:5000/api
+
+### 2. Create Student (POST)
+POST http://localhost:5000/api/students
+Content-Type: application/json
+
+{
+  "rollNo": "101",
+  "name": "Aditya Aushikar",
+  "email": "aditya@university.edu",
+  "department": "Computer Science",
+  "marks": 92
+}
+
+### 3. Get All Students (GET)
+GET http://localhost:5000/api/students
+
+### 4. Get Student by Roll Number or ID (GET)
+GET http://localhost:5000/api/students/101
+
+### 5. Update Student (PUT)
+PUT http://localhost:5000/api/students/101
+Content-Type: application/json
+
+{
+  "marks": 98,
+  "department": "Information Technology"
+}
+
+### 6. Delete Student (DELETE)
+DELETE http://localhost:5000/api/students/101

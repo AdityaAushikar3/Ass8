@@ -1,0 +1,16 @@
+$kind: http-request
+url: http://localhost:5000/api/students
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "rollNo": "101",
+      "name": "Aditya Aushikar",
+      "email": "aditya@university.edu",
+      "department": "Computer Science",
+      "marks": 92
+    }
+order: 1000
